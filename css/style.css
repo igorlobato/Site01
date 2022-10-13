@@ -7,3 +7,24 @@
 .pdf{
     background-color: rgb(219, 224, 223);
 }
+
+.navbar-brand{
+    color: rgb(255, 166, 0);
+}
+
+.lblnormal{
+    background-color: rgb(238, 238, 238);
+    width: 400px;
+}
+
+.btn-cadastrar{
+  background-color: orange;
+  color: rgb(0, 0, 0);
+  padding: 5px;
+  width: 35%;
+  min-width: 120px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
