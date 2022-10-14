@@ -1,8 +1,16 @@
 .logo{
     width: 100px;
-    <img src ="";
+    
     background: url(../imagens/logo.png);
 }
+
+.row{margin: 0px; padding: 0%;}
+.small{font-size: 13px;}
+.post-content{background-color: #FFF; box-shadow: 0px 0px 1px 0px #999; border-radius: 1px; padding: 10px;margin: 5px 0px;}
+.post-content h4{font-weight: normal;}
+.post-content img{width: 120px; height: 90px; float: right;}
+.post-content .button{text-align: right; padding: 10px;}
+.post-content .button .btn-info{border-radius: 0px; padding: 5px 25px 5px 2px;}
 
 .pdf{
     background-color: rgb(219, 224, 223);
@@ -15,6 +23,8 @@
 .lblnormal{
     background-color: rgb(238, 238, 238);
     width: 400px;
+    border-radius: 20px;
+    padding-left: 2%;
 }
 
 .btn-cadastrar{
@@ -28,3 +38,61 @@
   margin-right: auto;
   border-radius: 5px;
 }
+#entra{
+    width: 4px;
+}
+
+#t2{
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+#esqc{
+    width:30px;
+    color:rgb(109, 109, 109);
+    margin-left: 8%;
+   }
+
+#rgb{
+    font-size: 25px;
+    text-decoration: none;
+    font-style: oblique;
+}
+
+@media screen and (min-width: 850px){
+    .lblnormal {
+        width: 70%;
+       padding: 10px 10px;
+        
+    }
+    #botao{
+        margin-top: 50px;
+        width: 50%;
+    }
+   #t1{
+    margin-left: 90px;
+    margin-top: 18px
+   }
+   #t2{
+    text-align: center;
+    font-size: large;
+    margin-top: 4%;
+    margin-bottom: 4%;
+   }
+   #campo{
+    margin-bottom: 4%;
+   }
+   #entra{
+    width: 100px;
+   }
+   #esqc{
+    width:30px;
+   }
+   #rgb{
+    margin-right: 1%;
+    
+   }
+   .button{
+    margin-top: 2%;
+   }
+  }
