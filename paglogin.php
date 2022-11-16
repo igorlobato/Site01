@@ -1,5 +1,40 @@
 <?php 
 include('conexao.php');
+
+if(isset($_POST['email']) || isset($_POST['senha'])) {
+
+	if(strlen($_POST['email']) == 0){
+		echo "Preencha seu e-mail";
+	} else if(strlen($_POST['senha']) == 0){
+		echo "Preencha sua senha";
+	} else{
+		$email = $mysqli->real_escape_string($_POST['email']);
+		$senha = $mysqli->real_escape_string($_POST['senha']);
+
+		$sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+		$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+
+		$quantidade = $sql_query->num_rows;
+
+		if($quantidade == 1){
+			$usuario = $sql_query->fetch_assoc();
+
+			if(!isset($_SESSION)){
+				session_start();
+			}
+			$_SESSION['id'] = $usuario['id'];
+			$_SESSION['nome'] = $usuario['nome'];
+			
+			header("Location: index.php");
+		} 
+		
+		else{
+			echo "Falha ao logar! E-mail ou senha incorretos";
+		}
+	}
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +57,7 @@ include('conexao.php');
 		<nav class = "barra"></nav>
 		<nav class="navbar navbar-expand-lg bg-dark">
 			<div class="container-fluid">
-			  <a id="rgb" href="index.html" style=color:orange>RGB</a>
+			  <a id="rgb" href="index.php" style=color:orange>RGB</a>
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			  </button>
@@ -30,7 +65,7 @@ include('conexao.php');
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				  <li class="nav-item">
 					<center>
-					<a class="nav-link active" aria-current="page" href="paglogin.html" style="color:White">Entrar/Cadastrar-se</a>
+					<a class="nav-link active" aria-current="page" href="paglogin.php" style="color:White">Entrar/Cadastrar-se</a>
 				</center>
 				  </li>
 				</ul>
@@ -93,7 +128,7 @@ include('conexao.php');
 			<input class="lblnormal"
 			  placeholder="E-mail/Nome do usuário"
 			  size="40"
-			  name = 'e-mail'
+			  name = "email"
 			</center
 			/>
 		  </fieldset>
@@ -104,7 +139,7 @@ include('conexao.php');
 			<input
 			  class="lblnormal"
 			  placeholder="Senha"
-			  name = 'senha'
+			  name = "senha"
 			</center
 			/>
 			
@@ -114,6 +149,21 @@ include('conexao.php');
 			<input id="entra" type="submit" value="Entrar" class="btn-cadastrar"/>
 		  </center>
 		  <br>
-		<a id="esqc">Esqueceu a <a href ="esqueci.html">senha?</a></a>
+		<a id="esqc">Esqueceu a <a href ="esqueci.php">senha?</a></a>
+
+
+		<form action ="" method="POST">
+			<p>
+				<label>E-mail</label>
+				<input type="text" name="email">
+			</p>
+			
+				<label>Senha</label>
+				<input type="password" name="senha">
+			</p>
+			<p>
+				<button type="submit">Entrar</button>
+			</p>
+		</form>
 	</body>
 </html>
