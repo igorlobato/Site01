@@ -16,8 +16,6 @@ if(!isset($_SESSION)){
 		<link rel="icon" type="imagem/png" href="imagens/logo.png" />
 	</head>
 	<body class="pdf">
-		Bem vindo ao Painel, <?php echo $_SESSION['nome']; ?>
-			
 		<nav class = "barra"></nav>
 		<nav class="navbar navbar-expand-lg bg-dark">
 			<div class="container-fluid">
@@ -34,6 +32,7 @@ if(!isset($_SESSION)){
 				  <li class="nav-item">
 					<center>
 					<a class="nav-link active" aria-current="page" href="paglogin.php" style="color:White">Entrar/Cadastrar-se</a>
+					<?php echo $_SESSION['nome']; ?>
 				</center>
 				  </li>
 				</ul>

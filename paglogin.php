@@ -122,48 +122,32 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 		<h1 style="padding: 10px 30px">Entrar</h1>
 		<br>
 		<br>
-		<fieldset>
-			<center>
-			
-			<input class="lblnormal"
-			  placeholder="E-mail/Nome do usuário"
-			  size="40"
-			  name = "email"
-			</center
-			/>
-		  </fieldset>
-		  <br>
-		  <fieldset>
-			<center>
-			
-			<input
-			  class="lblnormal"
-			  placeholder="Senha"
-			  name = "senha"
-			</center
-			/>
-			
-		  </fieldset>
-		  <br>
-		<center>
-			<input id="entra" type="submit" value="Entrar" class="btn-cadastrar"/>
-		  </center>
-		  <br>
-		<a id="esqc">Esqueceu a <a href ="esqueci.php">senha?</a></a>
-
-
 		<form action ="" method="POST">
 			<p>
-				<label>E-mail</label>
-				<input type="text" name="email">
+			<center>
+				<input type="text" name="email" placeholder="E-mail" class="lblnormal">
+			</center>
 			</p>
-			
-				<label>Senha</label>
-				<input type="password" name="senha">
+			<center>
+				<input type="password" name="senha" placeholder="Senha" class="lblnormal">
+			</center>
 			</p>
+			<br>
+			<br>
 			<p>
-				<button type="submit">Entrar</button>
+			<center>
+				<button type="submit" class="btn-cadastrar" id="entra">Entrar</button>
+			</center>
 			</p>
 		</form>
+		
+		<br>
+		<br>
+		<a id="esqc">Esqueceu a <a href ="esqueci.php">senha?</a></a>
+		<br>
+		<br>
+		
+
+		
 	</body>
 </html>
