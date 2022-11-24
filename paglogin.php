@@ -35,6 +35,8 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -89,39 +91,33 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 		<br>
 		<br>
 		<br>
-		<fieldset>
+		<form action ="cadastrar.php" method="POST">
+			<p>
 			<center>
-		 
-			<input
-			 class="lblnormal"
-			  placeholder="E-mail"
-			  size="40"
-			</center
-			/>
-		  </fieldset>
-		  <br>
-		  <fieldset>
+				<input type="text" name="emailc" placeholder="E-mail" class="lblnormal">
+			</center>
+			</p>
+			<p>
 			<center>
-			
-			<input
-			 class="lblnormal"
-			  placeholder="Senha"
-			  size="40"
-			</center
-			/>
-		  </fieldset>
-		  <br>
-		  <br>
-		  <center>
-		  
-		  <input onclick="alert('Cadastro realizado com sucesso')" type="submit" value="Cadastrar" class="btn-cadastrar" />
-		</center>
+				<input type="text" name="usuario" placeholder="Usuário" class="lblnormal">
+			</center>
+			</p>
+			<center>
+				<input type="password" name="senhac" placeholder="Senha" class="lblnormal">
+			</center>
+			</p>
+			<br>
+			<br>
+			<p>
+			<center>
+				<button type="submit" class="btn-cadastrar" width="" id="entra">Cadastrar-se</button>
+			</center>
+			</p>
+		</form>
 
-		<br>
-		<br>
+		
 		<h1 style="padding: 10px 30px">Entrar</h1>
-		<br>
-		<br>
+		
 		<form action ="" method="POST">
 			<p>
 			<center>

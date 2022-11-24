@@ -31,8 +31,14 @@ if(!isset($_SESSION)){
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				  <li class="nav-item">
 					<center>
+					<?php
+					
+					?>
 					<a class="nav-link active" aria-current="page" href="paglogin.php" style="color:White">Entrar/Cadastrar-se</a>
-					<?php echo $_SESSION['nome']; ?>
+					<?php 
+					
+					
+					?>
 				</center>
 				  </li>
 				</ul>
