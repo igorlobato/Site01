@@ -34,13 +34,16 @@ if(!isset($_SESSION)){
 					<?php
 					
 					?>
-					<a class="nav-link active" aria-current="page" href="paglogin.php" style="color:White">Entrar/Cadastrar-se</a>
+					<a class="nav-link active" aria-current="page" href="paglogin.php" style="color:White; padding: 10px 10px;">Entrar/Cadastrar-se</a>
 					<?php 
 					
 					
 					?>
 				</center>
+				
 				  </li>
+				  <a href="logout.php" style="padding: 10px 10px">Sair</a>
+				  <a href="post.php" style="padding: 10px 10px">Postar</a>
 				</ul>
 				<form class="d-flex" role="search">
 				  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -111,6 +114,6 @@ if(!isset($_SESSION)){
 		  </div>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-		<a href="logout.php">Sair</a>
+
 	</body>
 </html>

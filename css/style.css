@@ -12,6 +12,11 @@
 .post-content .button{text-align: right; padding: 10px;}
 .post-content .button .btn-info{border-radius: 0px; padding: 5px 25px 5px 2px;}
 
+.logout{
+    width: 50px;
+    padding-left: 50%;
+}
+
 .pdf{
     background-color: rgb(219, 224, 223);
 }
