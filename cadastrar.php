@@ -20,7 +20,7 @@ $sql = "INSERT INTO usuarios (email, nome, senha) VALUES ('$email', '$nome', '$s
 
 
 if($mysqli->query($sql) === TRUE) {
-    $_SESSION['status_cadastro'] = true;
+    $_SESSION['postagem'] = true;
 }
 
 $mysqli->close();

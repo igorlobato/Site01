@@ -17,7 +17,10 @@
         <nav class = "barra"></nav>
 		<nav class="navbar navbar-expand-lg bg-dark">
 			<div class="container-fluid">
-				<a id="rgb" href="index.php" style=color:orange>RGB</a>
+				<a id="rgb" href="index.php" style=color:orange>
+				<span style="color:red">R</span>
+				<span style="color:green">G</span>
+				<span style="color:blue">B</span></a>
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			  </button>

@@ -20,9 +20,9 @@ if(!isset($_SESSION)){
 		<nav class="navbar navbar-expand-lg bg-dark">
 			<div class="container-fluid">
 			  <a id="rgb" href="index.php" style=color:orange>
-				<span class="letter-r">R</span>
-				<span class="letter-g">G</span>
-				<span class="letter-b">B</span>
+				<span style="color:red">R</span>
+				<span style="color:green">G</span>
+				<span style="color:blue">B</span>
 			</a>
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -64,6 +64,7 @@ if(!isset($_SESSION)){
 				  </a>
 				  <ul class="dropdown-menu dropdown-menu-white">
 					<li><a class="dropdown-item" href="#"><img src="./imagens/grafico.jpg" width="15px"> Mais votados</a></li>
+					<li><a class="dropdown-item" href="#"><img src="./imagens/x.jpg" width="15px"> Mais recentes</a></li>
 				  </ul>
 				</li>
 			  </ul>
@@ -78,37 +79,15 @@ if(!isset($_SESSION)){
 				<h4>Título da publicação</h4>
 				<span class="text-muted small"><i class="fas fa-user"></i> Eu - <i class="far fa-clock"></i> 00/00/00 às 00:00</span>
 				<div class="media">
-				  <img class="mr-3" src="/imagens/i1.jpg">
+				  <img class="mr-3" src="imagens/i1.jpg">
 				  <div class="media-body">
 					Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação  Título da publicação Título da publicação 
 					<p class="button"><a href="#" class="btn btn-info btn-sm">Ler Mais</a></p>
 				  </div>
 				</div>
 			  </div>
-	  
-			  <div class="post-content">
-				<h4>Título da publicação</h4>
-				<span class="text-muted small"><i class="fas fa-user"></i> Eu - <i class="far fa-clock"></i> 00/00/00 às 00:00</span>
-				<div class="media">
-				  <img class="mr-3" src="/imagens/i2.jpg">
-				  <div class="media-body">
-					Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação  Título da publicação Título da publicação
-					<p class="button"><a href="#" class="btn btn-info btn-sm">Ler Mais</a></p>
-				  </div>
-				</div>
-			  </div>
-	  
-			  <div class="post-content">
-				<h4>Título da publicação</h4>
-				<span class="text-muted small"><i class="fas fa-user"></i> Eu - <i class="far fa-clock"></i> 00/00/00 às 00:00</span>
-				<div class="media">
-				  <img class="mr-3" src="/imagens/i3.jpg">
-				  <div class="media-body">
-					Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação  Título da publicação Título da publicação
-					<p class="button"><a href="#" class="btn btn-info btn-sm">Ler Mais</a></p>
-				  </div>
-				</div>
-			  </div>
+		
+			
 	  
 	  
 		  </div>
