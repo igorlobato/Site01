@@ -1,9 +1,9 @@
-
-
-
-
 <?php
-session_start();
+
+
+
+
+/*session_start();
 include("conexao.php");
 
 $titulo = mysqli_real_escape_string($mysqli, trim($_POST['titulo']));
@@ -24,3 +24,4 @@ header('Location: index.php');
 exit;
 
 ?>
+/*

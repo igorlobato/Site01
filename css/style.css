@@ -4,6 +4,42 @@
     background: url(../imagens/logo.png);
 }
 
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#panel{
+    background-color: white;
+    width: 650px;
+    height: auto;
+    padding: 10px;
+    box-shadow: #333 0px 0px 1px;
+    border-radius: 0px;
+}
+
+#panel:hover{background-color: white;}
+
+.titulo{
+    font-size: 25px;
+    color:#000;
+}
+
+.titulo-hover{
+    text-decoration: none;
+}
+
+.descricao{
+    font-size:25px;
+    color: #000;
+}
+
+.foto{
+    width: 630px;
+    height: 400px;
+}
+
+
+
 .row{margin: 0px; padding: 0%;}
 .small{font-size: 13px;}
 .post-content{background-color: #FFF; box-shadow: 0px 0px 1px 0px #999; border-radius: 1px; padding: 10px;margin: 5px 0px;}
@@ -43,6 +79,11 @@
   margin-right: auto;
   border-radius: 5px;
 }
+
+.post{
+    width: 40px;
+}
+
 #entra{
     width: 4px;
 }
@@ -63,6 +104,10 @@
     text-decoration: none;
     font-style: oblique;
 }
+
+.postar{
+    background-color: rgb(1, 147, 245);
+   }
 
 @media screen and (min-width: 850px){
     .lblnormal {
@@ -95,7 +140,9 @@
    }
    #rgb{
     margin-right: 1%;
-    
+   }
+   .postar{
+    width: 50%;
    }
    .button{
     margin-top: 2%;

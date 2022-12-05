@@ -1,7 +1,5 @@
 <?php
-if(!isset($_SESSION)){
-				session_start();
-			}
+	include_once("conexao.php")
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +12,7 @@ if(!isset($_SESSION)){
 		<link rel = "stylesheet" href = "css/style.css">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 		<link rel="icon" type="imagem/png" href="imagens/logo.png" />
+		
 	</head>
 	<body class="pdf">
 		<nav class = "barra"></nav>
@@ -71,10 +70,32 @@ if(!isset($_SESSION)){
 			</div>
 		  </div>
 		
-		  
+		  <div id="body">
+		  <center>
+				<?php
+				if(isset($_GET['pagina'])){
+					$do = ($_GET['pagina']);
+				}else{
+					$do = "inicio";
+				}
+				if(file_exists("paginas/" .$do. ".php")){
+					include("paginas/" . $do. ".php");
+				}else{
+					print 'Pagina não encontrada';
+				}
+
+				?>
+			</center>
+		  </div>
+
+
+
+
+
+
 		  <div class="row">
 			<div>
-	  
+	  		
 			  <div class="post-content">
 				<h4>Título da publicação</h4>
 				<span class="text-muted small"><i class="fas fa-user"></i> Eu - <i class="far fa-clock"></i> 00/00/00 às 00:00</span>
