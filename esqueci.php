@@ -1,3 +1,40 @@
+<?php 
+	include("conexao.php");
+	if(isset($_POST[ok])){
+
+		$email = $mysqli->escape_string($_POST['email']);
+
+		if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+			$error[] = "E-mail inválido.";
+		}
+
+		$sql_code = "SELECT senha FROM usuarios WHERE email = '$email'";
+		$sql_query = $mysqli ->query($sql_code) or die ($mysqli->error);
+		$dado = $sql_query->fetch_assoc();
+		$total = $sql_query->num_rows;
+
+		if($total == 0)
+			$erro[] = "O e-mail não existe no banco de dados."
+
+		if(count($erro) == 0 && $total > 0){
+
+			$novasenha = substr(md5(time()), 0, 6);
+			$nscriptografada = md5(md5($novasenha));
+		
+
+		
+			if(mail($email, "Sua nova senha", "Sua nova senha: ".$novasenha)){
+				$sql_code = "UPDATE usuarios SET senha = '$nscriptografada' WHERE email= '$email'";
+				$sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+
+		}
+	}
+	}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -56,24 +93,33 @@
         <br>
         <p style="color:rgb(109, 109, 109)" id="t2">Diga-nos seu endereço de e-mail e enviaremos um e-mail com um link para redefinir sua senha.</a>
         <br>
-        <br>
+		<?php 
+		if(count($erro) > 0)
+			foreach($erro as $msg){
+				echo "<p>$msg</p>";
+			}
+		?>
+        
         <fieldset>
 			<center>
 			
-			<input
-			  class="lblnormal"
-			  placeholder="E-mail"
-			  size="40"
-			  id="campo"
-			/>
+			<form method ="POST" action="">
+			<p>
+			<center>
+				<input type="text" name="email" placeholder="E-mail" class="lblnormal">
 			</center>
+			
+			</p>
+			<br>
+			
+			<p>
+			<center>
+				<button type="submit" class="btn-cadastrar" id="botao" name="ok" value="ok">Redefinir Senha</button>
+			</center>
+			
+		</form>
 		  </fieldset>
 
-
-        <center>
-            <br>
-			<button onclick="alert('E-mail enviado com sucesso')"id="botao" type="submit" value="Redefinir senha" class="btn-cadastrar" style="padding-left: 0px;">Redefinir senha</button>
-		  </center>
 
         <script type="text/javascript" src="js/alertabotao.js"></script>
 		

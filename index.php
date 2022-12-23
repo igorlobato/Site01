@@ -1,5 +1,8 @@
 <?php
-	include_once("conexao.php")
+	include_once("conexao.php");
+	if(!isset($_SESSION)){
+		session_start();
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,21 +25,26 @@
 				<span style="color:red">R</span>
 				<span style="color:green">G</span>
 				<span style="color:blue">B</span>
+				
 			</a>
+			
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			  </button>
+			  
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				  <li class="nav-item">
-					<center>
-					<?php
 					
-					?>
+				  <li class="nav-item">
+					
+					<center>
+					
 					<a class="nav-link active" aria-current="page" href="paglogin.php" style="color:White; padding: 10px 10px;">Entrar/Cadastrar-se</a>
 					<?php 
 					
-					
+					echo $_SESSION['nome']; 
+			
 					?>
 				</center>
 				
@@ -68,6 +76,7 @@
 				</li>
 			  </ul>
 			</div>
+			
 		  </div>
 		
 		  <div id="body">
