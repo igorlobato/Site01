@@ -1,7 +1,8 @@
 <div class="well well-sm">
     <?php
-        $seleciona = mysql_query("SELECT * FROM posts ORDER BY id DESC");
-        $conta = mysql_num_rows($seleciona);
+        include_once 'conexao.php';
+        $seleciona = mysqli_query('SELECT * FROM posts ORDER BY id DESC');
+        $conta = mysqli_num_rows($seleciona);
 
         if($conta <= 0){
             echo "<code>Nehuma postagem cadastrada no banco de dados!";

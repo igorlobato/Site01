@@ -24,7 +24,6 @@ if(!isset($_SESSION)){
 				
 
 
-<button type="button" class="btn-close" aria-label="Close" href="index.php">
 				
 				<a style="padding: 0px 50px">Texto</a>
 			</a>
@@ -36,7 +35,7 @@ if(!isset($_SESSION)){
 				  <li class="nav-item">
 				
 				  </li>
-				  <a href="logout.php" style="padding: 10px 10px; margin-left: 90px;">Sair</a>
+				  <a href="logout.php" href="index.php" style="padding: 10px 10px; margin-left: 90px;">Sair</a>
 				  <a href="post.php" style="padding: 10px 10px">Postar</a>
 				</ul>
 				<form class="d-flex" role="search">

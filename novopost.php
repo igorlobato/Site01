@@ -60,70 +60,28 @@
 			  </div>
 			</div>
 		  </nav>
+          <content>
+    <h1 class="page-title">Postar</h1>
 
-		  <div class="banner" style="background-color: white;">
-			<div class="title">
-			  <h1 style="margin: 0% 5%;"><br>Popular</h1>
-			  <ul class="navbar-nav">
-				<li class="nav-item dropdown">
-				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-				  style="margin:3% 7%"><img src="./imagens/fogo.jpg" width="15px">
-					Em destaque
-				  </a>
-				  <ul class="dropdown-menu dropdown-menu-white">
-					<li><a class="dropdown-item" href="#"><img src="./imagens/grafico.jpg" width="15px"> Mais votados</a></li>
-					<li><a class="dropdown-item" href="#"><img src="./imagens/x.jpg" width="15px"> Mais recentes</a></li>
-				  </ul>
-				</li>
-			  </ul>
-			</div>
-			
-		  </div>
-		
-		  <div id="body">
-		  <center>
-				<?php
-				if(isset($_GET['pagina'])){
-					$do = ($_GET['pagina']);
-				}else{
-					$do = "inicio";
-				}
-				if(file_exists("paginas/" .$do. ".php")){
-					include("paginas/" . $do. ".php");
-				}else{
-					print 'Pagina não encontrada';
-				}
+    <?php
+    $titulo = $_POST['titulo'];
+    $descricao = $_POST['descricao'];
+    ?>
 
-				?>
-			</center>
-		  </div>
+    <?php
+    $sql = "INSERT INTO posts (titulo, descricao) VALUES ('$titulo', '$descricao')";
+
+    if ($result = mysqli_query($connection, $sql)) {
+        echo "Post feito com sucesso.
+        <a href='index.php'>Voltar</a>
+      ";
+    } else {
+        echo "Erro ao postar.
+        <a href='index.php'>Voltar</a>
+      ";
+    }
+    ?>
 
 
-
-
-
-
-		  <div class="row">
-			<div>
-	  		
-			  <div class="post-content">
-				<h4>Título da publicação</h4>
-				<span class="text-muted small"><i class="fas fa-user"></i> Eu - <i class="far fa-clock"></i> 00/00/00 às 00:00</span>
-				<div class="media">
-				  <img class="mr-3" src="imagens/i1.jpg">
-				  <div class="media-body">
-					Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação Título da publicação  Título da publicação Título da publicação 
-					<p class="button"><a href="#" class="btn btn-info btn-sm">Ler Mais</a></p>
-				  </div>
-				</div>
-			  </div>
-		
-			
-	  
-	  
-		  </div>
-
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
-	</body>
+</body>
 </html>
