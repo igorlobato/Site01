@@ -50,7 +50,7 @@ if(!isset($_SESSION)){
 			<hr style="margin: 0px 0px;">
 
     <div class="">
-      <form action="novopost.php" method="POST">
+      <form action="postagem.php" method="POST">
 
 	  <div class="banner" style="background-color: white;">
 			<div class="title">
@@ -70,20 +70,20 @@ if(!isset($_SESSION)){
 		  </div>
 		</div>
           
-		<form action ="postagem.php" method="POST">
-		  
-            <input type="text"  name="titulo" placeholder="Adicione um título interessante" style="width: 100%;">
-          
-		  	<textarea type="text" name="descricao" placeholder="Adicione o seu texto..." style="width: 100%; padding: 30px;"></textarea>
-			 <p>
-			  <center>
-				<button type="submit" class="postar" style="background-color: rgb(1, 147, 245); color: white; width: 20%; border-radius: 5px; min-width: 120px;">Postar</button>
-			</center>
+		
+	</form>
+	<form action="novopost.php" method="POST">
+	  
+		<input type="text"  name="titulo" placeholder="Adicione um título interessante" style="width: 100%;">
+	  
+		  <textarea type="text" name="descricao" placeholder="Adicione o seu texto..." style="width: 100%; padding: 30px;"></textarea>
+		 <p>
+		  <center>
+			<button type="submit" class="postar" style="background-color: rgb(1, 147, 245); color: white; width: 20%; border-radius: 5px; min-width: 120px;">Postar</button>
+		</center>
 
 
-		</form>
-        
-         
-      </form>
+	</form>
+	
     </div>
   </content>

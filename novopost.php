@@ -71,8 +71,9 @@
     <?php
     $sql = "INSERT INTO posts (titulo, descricao) VALUES ('$titulo', '$descricao')";
 
-    if ($result = mysqli_query($connection, $sql)) {
-        echo "Post feito com sucesso.
+    // if ($result = mysqli_query($connection, $sql)) {
+	if ($result = $mysqli->query($sql)) {
+			echo "Post feito com sucesso.
         <a href='index.php'>Voltar</a>
       ";
     } else {

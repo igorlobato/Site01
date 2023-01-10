@@ -69,20 +69,20 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 			  </button>
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				  <li class="nav-item">
-				  <center>
-					<?php
-					
-					?>
-					<a class="nav-link active" aria-current="page" href="paglogin.php" style="color:White; padding: 10px 10px;">Entrar/Cadastrar-se</a>
-					<?php 
-					
-					
-					?>
-				</center>
-				
-				  </li>
-				  <a href="logout.php" style="padding: 10px 10px">Sair</a>
+				<?php
+					if ($_SESSION['nome'] != '') {
+						echo '<li class="nome-user">' . $_SESSION['nome'] . '</li>'; 
+						echo '<li> <a href="logout.php" style="padding: 10px 10px">Sair</a>
+						<a href="post.php" style="padding: 10px 10px">Postar</a>';
+					} else { 
+						echo '
+						<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="paglogin.php"
+						 style="color:White; padding: 10px 10px;">Entrar/Cadastrar-se</a>
+						  </li>
+						';
+					}
+				?>
 				</ul>
 				<form class="d-flex" role="search">
 				  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
