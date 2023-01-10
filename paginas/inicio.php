@@ -18,7 +18,7 @@
                 $sql = "SELECT * FROM usuarios WHERE nome = '$postador'";
                 $query = mysqli_query($mysqli, $sql);
                 $linha = mysqli_fetch_assoc($query);
-            }
+            
         ?>
             <div id="panel" aling="left">
                 <p><a href="" class="titulo"><?php echo $titulo;?></a></p>
@@ -29,8 +29,9 @@
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Postado por: <?php echo $linha['nome']; ?></p>
                     <p></p>
             </div>
-
-    <?php 
+        
+    <?php
+            } 
         }
     // }}?>
 </div>
