@@ -85,7 +85,7 @@
 		  </div>
 		
 		  <div id="body">
-		  <center>
+		  
 				<?php
 				if(isset($_GET['pagina'])){
 					$do = ($_GET['pagina']);
@@ -99,7 +99,7 @@
 				}
 
 				?>
-			</center>
+			
 		  </div>
 
 

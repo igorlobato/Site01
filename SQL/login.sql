@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Jan-2023 às 01:27
+-- Tempo de geração: 13-Jan-2023 às 19:18
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -31,10 +31,10 @@ CREATE TABLE `posts` (
   `id` int(20) NOT NULL,
   `titulo` varchar(200) NOT NULL,
   `descricao` text NOT NULL,
-  `imagem` varchar(200) NOT NULL,
-  `data` varchar(200) NOT NULL,
-  `hora` varchar(200) NOT NULL,
-  `postador` varchar(200) NOT NULL
+  `imagem` varchar(200) DEFAULT NULL,
+  `data` varchar(200) DEFAULT NULL,
+  `hora` varchar(200) DEFAULT NULL,
+  `postador` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -42,8 +42,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `titulo`, `descricao`, `imagem`, `data`, `hora`, `postador`) VALUES
-(1, 'Primeira postagem', 'Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa ', '', '04/12/2022', '18:11', 'oi'),
-(2, 'Segunda postagem', 'Não estou mais suportando', '', 'asdasd', 'aaa', 'teste');
+(1, 'Primeira postagem', 'Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa ', '', '04/12/2022', '18:11', 'oi');
 
 -- --------------------------------------------------------
 
@@ -64,10 +63,11 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
 (1, 'Usuario de Teste', 'teste@teste.com', 'teste'),
-(2, 'oi', 'oi@oi.com', 'oi'),
+(2, 'oi', 'oi@oi.com', '3c5f37e6c2d333ce'),
 (4, 'b', 'a', 'c'),
 (6, '', '', ''),
-(7, '', 'xoxo@gmail.com', '');
+(7, '', 'xoxo@gmail.com', '104bef45beb79ea4'),
+(8, 'eu', 'eu@gmail.com', 'eu');
 
 --
 -- Índices para tabelas despejadas
@@ -93,13 +93,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

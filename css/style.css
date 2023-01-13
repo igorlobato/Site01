@@ -8,9 +8,13 @@
     margin: 0px;
     padding: 0px;
 }
+
+
+
 #panel{
+    margin-top: 5px;
     background-color: white;
-    width: 650px;
+    width: 100%;
     height: auto;
     padding: 10px;
     box-shadow: #333 0px 0px 1px;
@@ -20,7 +24,7 @@
 #panel:hover{background-color: white;}
 
 .titulo{
-    font-size: 25px;
+    font-size: 30px;
     color:#000;
 }
 
@@ -29,7 +33,7 @@
 }
 
 .descricao{
-    font-size:25px;
+    font-size:18px;
     color: #000;
 }
 
@@ -38,6 +42,9 @@
     height: 400px;
 }
 
+.banner{
+    background-color: white;
+}
 
 
 .row{margin: 0px; padding: 0%;}

@@ -27,7 +27,9 @@ if(!isset($_SESSION)){
 				
 				<a style="padding: 0px 50px">Texto</a>
 			</a>
-			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+			  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+			  aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			  </button>
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -35,8 +37,7 @@ if(!isset($_SESSION)){
 				  <li class="nav-item">
 				
 				  </li>
-				  <a href="logout.php" href="index.php" style="padding: 10px 10px; margin-left: 90px;">Sair</a>
-				  <a href="post.php" style="padding: 10px 10px">Postar</a>
+				  <a href="index.php" href="index.php" style="padding: 10px 10px; margin-left: 90px;">Voltar</a>
 				</ul>
 				<form class="d-flex" role="search">
 				  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -72,17 +73,18 @@ if(!isset($_SESSION)){
           
 		
 	</form>
-	<form action="novopost.php" method="POST">
+	<form action="novopost.php" method="POST" enctype="multipart/form-data">
 	  
 		<input type="text"  name="titulo" placeholder="Adicione um título interessante" style="width: 100%;">
 	  
 		  <textarea type="text" name="descricao" placeholder="Adicione o seu texto..." style="width: 100%; padding: 30px;"></textarea>
 		 <p>
+		 <input name ="imagem" type="file">
 		  <center>
 			<button type="submit" class="postar" style="background-color: rgb(1, 147, 245); color: white; width: 20%; border-radius: 5px; min-width: 120px;">Postar</button>
 		</center>
 
-
+			
 	</form>
 	
     </div>

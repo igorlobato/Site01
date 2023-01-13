@@ -61,17 +61,21 @@
 			</div>
 		  </nav>
           <content>
-    <h1 class="page-title">Postar</h1>
+    <h1 class="page-title"></h1>
 
     <?php
     $titulo = $_POST['titulo'];
     $descricao = $_POST['descricao'];
+	$imagem = $_POST['imagem']
+	#$postador = $_SESSION['nome']
     ?>
 
+<h3 style="margin: 30px 30px">
     <?php
-    $sql = "INSERT INTO posts (titulo, descricao) VALUES ('$titulo', '$descricao')";
+    $sql = "INSERT INTO posts (titulo, descricao, imagem) VALUES ('$titulo', '$descricao', '$imagem')";
 
     // if ($result = mysqli_query($connection, $sql)) {
+	
 	if ($result = $mysqli->query($sql)) {
 			echo "Post feito com sucesso.
         <a href='index.php'>Voltar</a>
@@ -82,7 +86,7 @@
       ";
     }
     ?>
-
+	</h3>
 
 </body>
 </html>
