@@ -1,4 +1,5 @@
 <!--  Cada post virar uma "página" -->
+<div class="well well-sm">
 <?php
  $idPost = $_GET['id'];
 
@@ -30,4 +31,4 @@
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Postado por: <?php echo $linha['nome']; ?></p>
             </div>
 <?php }}?>
-
+                </div>

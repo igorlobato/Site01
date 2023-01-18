@@ -66,13 +66,28 @@
     <?php
     $titulo = $_POST['titulo'];
     $descricao = $_POST['descricao'];
-	$imagem = $_POST['imagem']
-	#$postador = $_SESSION['nome']
+	$imagem = $_POST['imagem'];
+	$postador = $_SESSION['nome'];
+	date_default_timezone_set('America/Sao_Paulo');
+	$data = date("d/m/Y");
+	$hora = date("H:i:s");
+
+	$uploaddir = 'imagens/uploads/';
+	$uploadfile = $uploaddir.basename($_FILES['imagem']['name']);
+	$imagename = $uploaddir.basename($_FILES['imagem']['name']);
+
+	if(move_uploaded_file($_FILES['imagem']['tmp_name'], $uploadfile)){
+		echo "Imagem enviada com sucesso";}
+		else{
+			echo "Erro ao enviar a imagem";
+		}
+
     ?>
 
 <h3 style="margin: 30px 30px">
     <?php
-    $sql = "INSERT INTO posts (titulo, descricao, imagem) VALUES ('$titulo', '$descricao', '$imagem')";
+    $sql = "INSERT INTO posts (titulo, descricao, imagem, postador, data, hora)
+	 VALUES ('$titulo', '$descricao', '$imagename', '$postador', '$data', '$hora')";
 
     // if ($result = mysqli_query($connection, $sql)) {
 	

@@ -25,7 +25,7 @@
                 <?php if($descricao != null){ ?><p class="descricao"><?php echo $descricao;?></p>
                     <?php } ?>
                 <?php if($imagem != null){ ?><p><img src="<?php echo $imagem;?>" class="foto"/></p><?php } ?>
-                <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Postado em: <?php echo $data. "às".$hora;?></br>
+                <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Postado em: <?php echo $data. " às ".$hora;?></br>
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Postado por: <?php echo $linha['nome']; ?></p>
                     <p></p>
             </div>
