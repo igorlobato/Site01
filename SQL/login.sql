@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Jan-2023 às 19:18
+-- Tempo de geração: 20-Jan-2023 às 03:02
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `login`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id` int(20) NOT NULL,
+  `id_post` int(100) NOT NULL,
+  `nome` varchar(200) NOT NULL,
+  `comentario` varchar(500) NOT NULL,
+  `data` varchar(200) NOT NULL,
+  `hora` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `curtidas`
+--
+
+CREATE TABLE `curtidas` (
+  `id` int(20) NOT NULL,
+  `id_post` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -42,7 +68,16 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `titulo`, `descricao`, `imagem`, `data`, `hora`, `postador`) VALUES
-(1, 'Primeira postagem', 'Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa ', '', '04/12/2022', '18:11', 'oi');
+(1, 'Primeira postagem', 'Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa ', '', '04/12/2022', '18:11', 'oi'),
+(17, 'aaaaaaaaaaaaaaaaa', 'bb', '', NULL, NULL, NULL),
+(18, 'bbbbbbbb', 'bb', '', NULL, NULL, NULL),
+(19, 'ccccccccc', 'ccc', '', NULL, NULL, 'Usuario de Teste'),
+(20, 'ddddddddddd', 'ddd', '', '17/01/2023', '22:33:14', 'Usuario de Teste'),
+(21, 'yyyyyyyyyyyyy', 'yy', '', '17/01/2023', '22:34:32', 'Usuario de Teste'),
+(22, 'vvv', 'vv', '', '17/01/2023', '22:47:29', 'Usuario de Teste'),
+(23, 'Teste de imagem ', 'testando', 'imagens/uploads/i1.jpg', '17/01/2023', '22:58:38', 'Usuario de Teste'),
+(24, 'Teste sem foto', 'aaaaa', 'imagens/uploads/', '17/01/2023', '22:58:50', 'Usuario de Teste'),
+(25, 'Teste com foto', ' kkkkkkkkkk', 'imagens/uploads/i2.jpg', '17/01/2023', '22:59:25', 'Usuario de Teste');
 
 -- --------------------------------------------------------
 
@@ -74,6 +109,18 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
 --
 
 --
+-- Índices para tabela `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `curtidas`
+--
+ALTER TABLE `curtidas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `posts`
 --
 ALTER TABLE `posts`
@@ -90,10 +137,22 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de tabela `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `curtidas`
+--
+ALTER TABLE `curtidas`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`

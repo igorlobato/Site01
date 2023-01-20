@@ -18,7 +18,24 @@
                 $sql = "SELECT * FROM usuarios WHERE nome = '$postador'";
                 $query = mysqli_query($mysqli, $sql);
                 $linha = mysqli_fetch_assoc($query);
-            
+
+                $selecionaCurtidas = mysqli_query("SELECT * FROM curtidas WHERE id_post = '$id'");
+                $contaCurtidas = mysqli_num_rows($selecionaCurtidas);
+
+                if($contaCurtidas == 1){
+                    $contaCurtidas = $contaCurtidas." curtiu";
+                }else if($contaCurtidas > 1){
+                    $contaCurtidas = $contaCurtidas." curtiram";
+                }
+                
+                $selecionaComentarios = mysqli_query("SELECT * FROM comentarios WHERE id_post = '$id'");
+                $contaComentarios = mysqli_num_rows($selecionaComentarios);
+
+                if($contaComentarios == 1){
+                    $contaComentarios = $contaComentarios." comentou";
+                }else if($contaComentarios > 1){
+                    $contaComentarios = $contaComentarios." comentaram";
+                }
         ?>
             <div id="panel" aling="left">
                 <p><a href="?pagina=post&id=<?php echo $id;?>" class="titulo"><?php echo $titulo;?></a></p>
@@ -27,7 +44,13 @@
                 <?php if($imagem != null){ ?><p><img src="<?php echo $imagem;?>" class="foto"/></p><?php } ?>
                 <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Postado em: <?php echo $data. " às ".$hora;?></br>
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Postado por: <?php echo $linha['nome']; ?></p>
-                    <p></p>
+                <p><code><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <?php echo $contaCurtidas;?> - 
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span><?php echo $contaComentarios;?></code></p>
+                <p><a href="?pagina=curtir&id=<?php echo $id;?>" class="btn btn-default">
+                <span class="glyphicon glyphicon-thumbs-up"></span> Curtir</a>
+                <a href="?pagina=post&id=<?php echo $id;?>" class="btn btn-default">
+                <span class="glyphicon glyphicon-comment"></span> Comentar</a>
+                </p>
             </div>
         
     <?php

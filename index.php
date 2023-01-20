@@ -18,6 +18,9 @@
 		 rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 		  crossorigin="anonymous">
 		<link rel="icon" type="imagem/png" href="imagens/logo.png" />
+		<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+		<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 		
 	</head>
 	<body class="pdf">
@@ -65,22 +68,91 @@
 			</div>
 		  </nav>
  
+		
+	
+		  
+		  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-5 fw-semibold">Conteúdos</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          Home
+        </button>
+        <div class="collapse show" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+          Dashboard
+        </button>
+        <div class="collapse" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Orders
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Processed</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Returned</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+          Account
+        </button>
+        <div class="collapse" id="account-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		  <div class="banner" style="background-color: white;">
-			<div class="title">
-			  <h1 style="margin: 0% 5%;"><br>Popular</h1>
-			  <ul class="navbar-nav">
-				<li class="nav-item dropdown">
-				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-				  style="margin:3% 7%"><img src="./imagens/fogo.jpg" width="15px">
-					Em destaque
-				  </a>
-				  <ul class="dropdown-menu dropdown-menu-white">
-					<li><a class="dropdown-item" href="#"><img src="./imagens/grafico.jpg" width="15px"> Mais votados</a></li>
-					<li><a class="dropdown-item" href="#"><img src="./imagens/x.jpg" width="15px"> Mais recentes</a></li>
-				  </ul>
-				</li>
-			  </ul>
-			</div>
+			  <h1 style="margin: 0% 5%; margin-down: 5%;"><br>Geral</h1>
+		  </div>
 			
 		  </div>
 		
@@ -117,6 +189,12 @@
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+		
+		<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
+      <script src="sidebars.js"></script>
+	  <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+      <script src="sidebars.js"></script>
 	</body>
 </html>
