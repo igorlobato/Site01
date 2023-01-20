@@ -72,60 +72,57 @@
 	
 		  
 		  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+    <a href="index.php" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-5 fw-semibold">Conteúdos</span>
     </a>
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Home
+          Processadores
         </button>
         <div class="collapse show" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Intel</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Amd</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Outros</a></li>
           </ul>
         </div>
       </li>
       <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Dashboard
+          Placas de Vídeo
         </button>
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Geforce</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Radeon</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Outros</a></li>
+            
           </ul>
         </div>
       </li>
       <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Orders
+          Geral
         </button>
         <div class="collapse" id="orders-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Processed</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Returned</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Hardware</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Software</a></li>
           </ul>
         </div>
       </li>
       <li class="border-top my-3"></li>
       <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          Account
+          Conta
         </button>
         <div class="collapse" id="account-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+            <li><a href="post.php" class="link-dark d-inline-flex text-decoration-none rounded">Novo Post</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Perfil</a></li>
+            <li><a href="logout.php" class="link-dark d-inline-flex text-decoration-none rounded">Sair</a></li>
           </ul>
         </div>
       </li>
@@ -150,7 +147,7 @@
 
 
 
-		  <div class="banner" style="background-color: white;">
+		  <div class="banner" style="background-color: white; width: 100%; margin-left:285px;">
 			  <h1 style="margin: 0% 5%; margin-down: 5%;"><br>Geral</h1>
 		  </div>
 			
