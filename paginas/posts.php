@@ -1,9 +1,10 @@
 <!--  Cada post virar uma "página" -->
 <div class="well well-sm">
 <?php
+include_once 'conexao.php';
  $idPost = $_GET['id'];
 
- $seleciona = mysqli_query("SELECT * FROM posts WHERE id = '$idPost'");
+ $seleciona = mysqli_query($mysqli, "SELECT * FROM posts WHERE id = '$idPost'");
  $conta = mysqli_num_rows($seleciona);
 
  if($conta <= 0){
@@ -21,7 +22,7 @@
         $query = mysqli_query($mysqli, $sql);
         $linha = mysqli_fetch_assoc($query);
 
-        $selecionaCurtidas = mysqli_query("SELECT * FROM curtidas WHERE id_post = '$id'");
+        $selecionaCurtidas = mysqli_query($mysqli, "SELECT * FROM curtidas WHERE id_post = '$id'");
                 $contaCurtidas = mysqli_num_rows($selecionaCurtidas);
 
                 if($contaCurtidas == 1){
@@ -30,7 +31,7 @@
                     $contaCurtidas = $contaCurtidas." curtiram";
                 }
                 
-                $selecionaComentarios = mysqli_query("SELECT * FROM comentarios WHERE id_post = '$id'");
+                $selecionaComentarios = mysqli_query($mysqli, "SELECT * FROM comentarios WHERE id_post = '$id'");
                 $contaComentarios = mysqli_num_rows($selecionaComentarios);
 
                 if($contaComentarios == 1){
@@ -68,13 +69,13 @@
         <input type="hidden" name="comentar" value="comment">
     </form>
     <?php
-        if(isset($_POST['comentar']) && $_POST['comentar'] == "comment"){
+        if ( (isset($_POST['comentar']) && $_POST['comentar'] == "comment") && (isset($_SESSION['nome'])) ){
             $nome = $_SESSION['nome'];
             $comentario = $_POST['comentario'];
 
             date_default_timezone_set('America/Sao_paulo');
-            $data = date(d/m/Y);
-            $hora = date(H:i:s);
+            $data = date("d/m/Y");
+            $hora = date("H:i:s");
 
             if(empty($nome)){
                 echo "É preciso estar logado para comentar!";
@@ -82,7 +83,7 @@
                 $comentar = "INSERT INTO comentarios (id_post, nome, comentario, data, hora) VALUES
                 ('$idPost', '$nome', '$comentario', '$data', '$hora')";
 
-                if(mysqli_query($comentar)){
+                if(mysqli_query($mysqli, $comentar)){
                     echo "Comentário enviado com sucesso!";
                 }
             }
@@ -91,14 +92,14 @@
 
     <hr>
     <?php
-        $seleciona = mysqli_query("SELECT * FROM comentarios WHERE id_post = '$idPost' ORDER BY id DESC");
+        $seleciona = mysqli_query($mysqli, "SELECT * FROM comentarios WHERE id_post = '$idPost' ORDER BY id DESC");
         $conta = mysqli_num_rows($seleciona);
 
-        if($conta <= 0){
+        if($conta <= 0) {
             echo "Este post não possui comentários";
-        }else{
-            while{
-                ($row = mysqli_fetch_array($seleciona)){
+        } else {
+            while
+                ($row = mysqli_fetch_array($seleciona)) {
                     $nome = $row['nome'];
                     $comentario = $row['comentario'];
                     $data = $row['data'];
@@ -109,8 +110,9 @@
             <p><b><?php echo $nome;?></br></p>
             <p class="list-group-item"><?php echo $comentario;?></p>
             <p class="list-group-item"><span class="glyphicon-search" aria-hidden="true"></span>
-            <?php echo $data. " às " .hora;?></p>         
+            <?php echo $data. " às " . $hora;?></p>         
         </div>
 
-    <?php }} ?> 
+    <?php }
+    } ?> 
 </div>

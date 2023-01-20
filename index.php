@@ -1,4 +1,5 @@
 <?php
+
 	include_once("conexao.php");
 	if(!isset($_SESSION)){
 		session_start();
@@ -45,7 +46,7 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
 				<?php
-					if ($_SESSION['nome'] != '') {
+					if ( (isset($_SESSION['nome'])) && ($_SESSION['nome'] != '') ) {
 						echo '<li class="nome-user">' . $_SESSION['nome'] . '</li>'; 
 						echo '<li> <a href="logout.php" style="padding: 10px 10px">Sair</a>
 						<a href="post.php" style="padding: 10px 10px">Postar</a>';
@@ -71,7 +72,7 @@
 		
 	
 		  
-		  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+		  <div class="flex-shrink-0 p-3 bg-white menu-lateral">
     <a href="index.php" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-5 fw-semibold">Conteúdos</span>
@@ -81,7 +82,7 @@
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
           Processadores
         </button>
-        <div class="collapse show" id="home-collapse">
+        <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Intel</a></li>
             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Amd</a></li>
@@ -147,7 +148,7 @@
 
 
 
-		  <div class="banner" style="background-color: white; width: 100%; margin-left:285px;">
+		  <div class="banner barra-topo">
 			  <h1 style="margin: 0% 5%; margin-down: 5%;"><br>Geral</h1>
 		  </div>
 			

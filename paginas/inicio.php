@@ -19,7 +19,7 @@
                 $query = mysqli_query($mysqli, $sql);
                 $linha = mysqli_fetch_assoc($query);
 
-                $selecionaCurtidas = mysqli_query("SELECT * FROM curtidas WHERE id_post = '$id'");
+                $selecionaCurtidas = mysqli_query($mysqli, "SELECT * FROM curtidas WHERE id_post = '$id'");
                 $contaCurtidas = mysqli_num_rows($selecionaCurtidas);
 
                 if($contaCurtidas == 1){
@@ -28,7 +28,7 @@
                     $contaCurtidas = $contaCurtidas." curtiram";
                 }
                 
-                $selecionaComentarios = mysqli_query("SELECT * FROM comentarios WHERE id_post = '$id'");
+                $selecionaComentarios = mysqli_query($mysqli, "SELECT * FROM comentarios WHERE id_post = '$id'");
                 $contaComentarios = mysqli_num_rows($selecionaComentarios);
 
                 if($contaComentarios == 1){
