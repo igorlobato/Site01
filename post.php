@@ -21,10 +21,11 @@ if(!isset($_SESSION)){
 		<nav class = "barra"></nav>
 		<nav class="navbar navbar-expand-lg bg-white">
 			<div class="container-fluid">
-				
-
-
-				
+			<a id="rgb" href="index.php" style=color:orange>
+				<span style="color:red">R</span>
+				<span style="color:green">G</span>
+				<span style="color:blue">B</span>				
+			</a>	
 				<a style="padding: 0px 50px">Texto</a>
 			</a>
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -60,7 +61,7 @@ if(!isset($_SESSION)){
 				<li class="nav-item dropdown">
 				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
 				  style="margin:3% 7%">
-					Selecione uma comunidade
+					Selecione um tópico
 				  </a>
 				  <ul class="dropdown-menu dropdown-menu-white">
 					<li><a class="dropdown-item" href="#"><img src="./imagens/grafico.jpg" width="15px"> Mais votados</a></li>

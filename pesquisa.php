@@ -71,8 +71,8 @@
  
 		
 	
-<div id="funciona">
-		  <div class="flex-shrink-0 p-3 bg-white menu-lateral" style="height: 100%;">
+		  
+		  <div class="flex-shrink-0 p-3 bg-white menu-lateral">
     <a href="index.php" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-5 fw-semibold">Conteúdos</span>
@@ -133,7 +133,8 @@
     }?>
     </ul>
   </div>
-  
+
+
 
 
 
@@ -160,21 +161,36 @@
 		  <div id="body">
 		  
 				<?php
-
-				if(isset($_GET['pagina'])){
-					$do = ($_GET['pagina']);
-				}else{
-					$do = "inicio";
+				if(isset($_POST['buscar']) && $_POST['buscar'] == "find"){
+					$busca = $_POST['busca'];
+					if(empty($busca)){
+						echo "Digite alguma coisa";
+					} else{
+						$seleciona = mysqli_query($mysqli, "SELECT * FROM posts WHERE titulo LIKE '%busca%' ORDER BY id DESC");
+					$conta = mysqli_num_rows($seleciona);
+	
+					if($conta <= 0){
+						echo "<center>Nehum post encontrado!</center>";
+                        echo "$busca";
+					}else{
+                        if(isset($_GET['pagina'])){
+                            $do = ($_GET['pagina']);
+                        }else{
+                            $do = "inicio";
+                        }
+                        if(file_exists("paginas/" .$do. ".php")){
+                            include("paginas/" . $do. ".php");
+                        }else{
+                            print 'Pagina não encontrada';
+                        }
 				}
-				if(file_exists("paginas/" .$do. ".php")){
-					include("paginas/" . $do. ".php");
-				}else{
-					print 'Pagina não encontrada';
 				}
-				?>	
+				}
+				?>
+			
 		  </div>
 
-		</div>
+
 
 
 
@@ -186,7 +202,7 @@
 	  
 	  
 		  </div>
-</div>
+
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 		

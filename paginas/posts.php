@@ -42,7 +42,7 @@ include_once 'conexao.php';
 ?>
     
     <div id="panel" aling="left">
-                <p><a href="?pagina=post&id=<?php echo $id;?>" class="titulo"><?php echo $titulo;?></a></p>
+                <p><a href="?pagina=posts&id=<?php echo $id;?>" class="titulo"><?php echo $titulo;?></a></p>
                 <?php if($descricao != null){ ?><p class="descricao"><?php echo $descricao;?></p>
                     <?php } ?>
                 <?php if($imagem != null){ ?><p><img src="<?php echo $imagem;?>" class="foto"/></p><?php } ?>
@@ -78,7 +78,7 @@ include_once 'conexao.php';
             $hora = date("H:i:s");
 
             if(empty($nome)){
-                echo "É preciso estar logado para comentar!";
+                echo 'É preciso estar logado para comentar!';
             }else{
                 $comentar = "INSERT INTO comentarios (id_post, nome, comentario, data, hora) VALUES
                 ('$idPost', '$nome', '$comentario', '$data', '$hora')";

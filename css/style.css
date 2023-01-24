@@ -226,25 +226,38 @@ main {
 }
 
 .menu-lateral {
-  /* width: 90%; */
-  /* display: none; */
+  width: 90%; 
+  display: none; 
 }
 
 .barra-topo {
   width: 90%;
+  height: 100%;
   background-color: white;
 }
 
 
+
 @media screen and (min-width: 850px) {
+  #funciona{
+    width:25%; 
+    height:1000px;
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    margin-right: 0;
+    background-color:white;
+  }
+
   .menu-lateral {
     width: 25%;
     float: left;
     display: block;
+    height: 100%;
   }
 
   .barra-topo {
-    width: 70%;
+    width: 100%;
   }
 
   .lblnormal {
@@ -293,4 +306,19 @@ main {
   .button {
     margin-top: 2%;
   }
+  .foto-user{ 
+  border-radius: 3px;
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+
+  }
+.perfil{
+  background-color: white;
+  margin-top: 5px;
+}
+.formulario{
+  width: 50%;
+  margin-left: 400px;
+}
 }

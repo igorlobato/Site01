@@ -38,7 +38,7 @@
                 }
         ?>
             <div id="panel" aling="left">
-                <p><a href="?pagina=post&id=<?php echo $id;?>" class="titulo"><?php echo $titulo;?></a></p>
+                <p><a href="?pagina=posts&id=<?php echo $id;?>" class="titulo"><?php echo $titulo;?></a></p>
                 <?php if($descricao != null){ ?><p class="descricao"><?php echo $descricao;?></p>
                     <?php } ?>
                 <?php if($imagem != null){ ?><p><img src="<?php echo $imagem;?>" class="foto"/></p><?php } ?>

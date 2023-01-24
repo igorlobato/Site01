@@ -72,7 +72,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<?php
-					if ($_SESSION['nome'] != '') {
+					if ( (isset($_SESSION['nome'])) && ($_SESSION['nome'] != '') ) {
 						echo '<li class="nome-user">' . $_SESSION['nome'] . '</li>'; 
 						echo '<li> <a href="logout.php" style="padding: 10px 10px">Sair</a>
 						<a href="post.php" style="padding: 10px 10px">Postar</a>';
