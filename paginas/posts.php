@@ -1,5 +1,6 @@
 <!--  Cada post virar uma "página" -->
 <div class="well well-sm">
+    
 <?php
 include_once 'conexao.php';
  $idPost = $_GET['id'];
@@ -18,6 +19,7 @@ include_once 'conexao.php';
         $data = $row['data'];
         $hora = $row['hora'];
         $postador = $row['postador'];
+        $topico = $row['topico'];
         $sql = "SELECT * FROM usuarios WHERE nome = '$postador'";
         $query = mysqli_query($mysqli, $sql);
         $linha = mysqli_fetch_assoc($query);
@@ -42,6 +44,7 @@ include_once 'conexao.php';
 ?>
     
     <div id="panel" aling="left">
+                <p><a href="?pagina=posts&id=<?php echo $id;?>" class="titulo"><?php echo $topico;?></a></p>
                 <p><a href="?pagina=posts&id=<?php echo $id;?>" class="titulo"><?php echo $titulo;?></a></p>
                 <?php if($descricao != null){ ?><p class="descricao"><?php echo $descricao;?></p>
                     <?php } ?>

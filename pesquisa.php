@@ -70,9 +70,9 @@
 		  </nav>
  
 		
-	
-		  
-		  <div class="flex-shrink-0 p-3 bg-white menu-lateral">
+		  <div class="sidebar">	
+
+		  <div class="flex-shrink-0 p-3 bg-white menu-lateral" style="height: 100%;">
     <a href="index.php" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-5 fw-semibold">Conteúdos</span>
@@ -133,33 +133,15 @@
     }?>
     </ul>
   </div>
+</div>
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		  <div class="banner barra-topo">
-			  <h1 style="margin: 0% 5%; margin-down: 5%;"><br>Geral</h1>
-		  </div>
-			
-		  </div>
-		
-		  <div id="body">
 		  
+			
+
+<div class="main-content">		
+		  <div id="body">
 				<?php
 				if(isset($_POST['buscar']) && $_POST['buscar'] == "find"){
 					$busca = $_POST['busca'];
@@ -191,19 +173,11 @@
 		  </div>
 
 
-
-
-
-
-		  <div class="row">
-			
 		
-			
-	  
 	  
 		  </div>
 
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+		  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 		
 		<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

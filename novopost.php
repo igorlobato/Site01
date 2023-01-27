@@ -71,6 +71,7 @@
 	date_default_timezone_set('America/Sao_Paulo');
 	$data = date("d/m/Y");
 	$hora = date("H:i:s");
+	$topico = $_POST['topic'];
 
 	$uploaddir = 'imagens/uploads/';
 	$uploadfile = $uploaddir.basename($_FILES['imagem']['name']);
@@ -86,8 +87,8 @@
 
 <h3 style="margin: 30px 30px">
     <?php
-    $sql = "INSERT INTO posts (titulo, descricao, imagem, postador, data, hora)
-	 VALUES ('$titulo', '$descricao', '$imagename', '$postador', '$data', '$hora')";
+    $sql = "INSERT INTO posts (titulo, descricao, imagem, postador, data, hora, topico)
+	 VALUES ('$titulo', '$descricao', '$imagename', '$postador', '$data', '$hora', '$topico')";
 
     // if ($result = mysqli_query($connection, $sql)) {
 	

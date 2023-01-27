@@ -18,7 +18,7 @@ if(!isset($_SESSION)){
 	</head>
 	<body >
 		
-		<nav class = "barra"></nav>
+		
 		<nav class="navbar navbar-expand-lg bg-white">
 			<div class="container-fluid">
 			<a id="rgb" href="index.php" style=color:orange>
@@ -48,45 +48,77 @@ if(!isset($_SESSION)){
 			</div>
 		  </nav>
 
-          <content>
+          
 			<hr style="margin: 0px 0px;">
 
-    <div class="">
-      <form action="postagem.php" method="POST">
+    
+      
 
-	  <div class="banner" style="background-color: white;">
-			<div class="title">
+	 
+			
 			 
-			  <ul class="navbar-nav">
-				<li class="nav-item dropdown">
-				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-				  style="margin:3% 7%">
-					Selecione um tópico
-				  </a>
-				  <ul class="dropdown-menu dropdown-menu-white">
-					<li><a class="dropdown-item" href="#"><img src="./imagens/grafico.jpg" width="15px"> Mais votados</a></li>
-				  </ul>
-				</li>
-			  </ul>
-			</div>
-		  </div>
-		</div>
+			
+      
+
+	  
+			 
+			  
+			
+		  
           
 		
-	</form>
-	<form action="novopost.php" method="POST" enctype="multipart/form-data">
-	  
-		<input type="text"  name="titulo" placeholder="Adicione um título interessante" style="width: 100%;">
-	  
-		  <textarea type="text" name="descricao" placeholder="Adicione o seu texto..." style="width: 100%; padding: 30px;"></textarea>
-		 <p>
-		 <input name ="imagem" type="file">
-		  <center>
-			<button type="submit" class="postar" style="background-color: rgb(1, 147, 245); color: white; width: 20%; border-radius: 5px; min-width: 120px;">Postar</button>
-		</center>
-
-			
-	</form>
 	
-    </div>
-  </content>
+			<form action="novopost.php" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="topic" id="topic">
+  <ul class="navbar-nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin:3% 7%">
+        Selecione um tópico
+      </a>
+      <ul class="dropdown-menu dropdown-menu-white">
+        <li><a class="dropdown-item" href="#" value="Intel">Intel</a></li>
+        <li><a class="dropdown-item" href="#" value="Amd">Amd</a></li>
+        <li><a class="dropdown-item" href="#" value="Geforce">Geforce</a></li>
+        <li><a class="dropdown-item" href="#" value="Radeon">Radeon</a></li>
+        <li><a class="dropdown-item" href="#" value="Hardware">Hardware</a></li>
+        <li><a class="dropdown-item" href="#" value="Software">Software</a></li>
+        <li><a class="dropdown-item" href="#" value="Outros">Outros</a></li>
+		<ul class="dropdown-menu dropdown-menu-white" onchange="document.getElementById('topic').value = this.value">
+	  </ul>
+    </li>
+  </ul>
+  
+  
+  <input type="text"  name="titulo" placeholder="Adicione um título interessante" style="width: 100%;">
+  
+  <textarea type="text" name="descricao" placeholder="Adicione o seu texto..." style="width: 100%; padding: 30px;"></textarea>
+  <p>
+  <input name ="imagem" type="file">
+  <center>
+    <button type="submit" class="postar" style="background-color: rgb(1, 147, 245); color: white; width: 20%; border-radius: 5px; min-width: 120px;">Postar</button>
+  </center>
+</form>
+
+<script>
+  var options = document.querySelectorAll(".dropdown-item");
+  options.forEach(function(option) {
+    option.addEventListener("click", function() {
+      document.querySelector("#topic").value = this.getAttribute("value");
+    });
+  });
+</script>
+
+    	
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+		
+		<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="sidebars.js"></script>
+	  <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+      <script src="sidebars.js"></script>
+
+	
+</html>

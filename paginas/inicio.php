@@ -1,4 +1,7 @@
 <div class="well well-sm">
+<div class="banner barra-topo">
+			  <h1 style="margin: 0% 5%; margin-down: 5%;"><br>Geral</h1>
+		  </div>
     <?php
         include_once 'conexao.php';
         $seleciona = mysqli_query($mysqli, 'SELECT * FROM posts ORDER BY id DESC');
@@ -15,6 +18,7 @@
                 $data = $row['data'];
                 $hora = $row['hora'];
                 $postador = $row['postador'];
+                $topico = $row['topico'];
                 $sql = "SELECT * FROM usuarios WHERE nome = '$postador'";
                 $query = mysqli_query($mysqli, $sql);
                 $linha = mysqli_fetch_assoc($query);
@@ -38,6 +42,7 @@
                 }
         ?>
             <div id="panel" aling="left">
+                <p><a href="?pagina=posts&id=<?php echo $id;?>" class="titulo"><?php echo $topico;?></a></p>
                 <p><a href="?pagina=posts&id=<?php echo $id;?>" class="titulo"><?php echo $titulo;?></a></p>
                 <?php if($descricao != null){ ?><p class="descricao"><?php echo $descricao;?></p>
                     <?php } ?>
@@ -48,7 +53,7 @@
                 <span class="glyphicon glyphicon-comment" aria-hidden="true"></span><?php echo $contaComentarios;?></code></p>
                 <p><a href="?pagina=curtir&id=<?php echo $id;?>" class="btn btn-default">
                 <span class="glyphicon glyphicon-thumbs-up"></span> Curtir</a>
-                <a href="?pagina=post&id=<?php echo $id;?>" class="btn btn-default">
+                <a href="?pagina=posts&id=<?php echo $id;?>" class="btn btn-default">
                 <span class="glyphicon glyphicon-comment"></span> Comentar</a>
                 </p>
             </div>

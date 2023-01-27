@@ -70,9 +70,7 @@
 		  </nav>
  
 		
-	
-<div id="funciona">
-		  <div class="flex-shrink-0 p-3 bg-white menu-lateral" style="height: 100%;">
+		  <div class="sidebar">	
     <a href="index.php" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-5 fw-semibold">Conteúdos</span>
@@ -133,30 +131,14 @@
     }?>
     </ul>
   </div>
-  
+</div>
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		  <div class="banner barra-topo">
-			  <h1 style="margin: 0% 5%; margin-down: 5%;"><br>Geral</h1>
-		  </div>
+		  
 			
-		  </div>
-		
+
+<div class="main-content">		
 		  <div id="body">
 		  
 				<?php
@@ -173,20 +155,9 @@
 				}
 				?>	
 		  </div>
+			</div>
+	
 
-		</div>
-
-
-
-
-		  <div class="row">
-			
-		
-			
-	  
-	  
-		  </div>
-</div>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 		
