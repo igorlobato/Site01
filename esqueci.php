@@ -86,14 +86,14 @@
 					}
 				?>
 					</ul>
-			
-					<form class="d-flex" role="search">
-						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit">Search</button>
-					</form>
-				</div>
+				<form action="pesquisa.php" method="POST" enctype="multipart/form-data" class="d-flex" role="search">
+				  <input name="busca" class="form-control me-2" type="text" placeholder="Digite algo..." aria-label="Search">
+				  <button value="Buscar" class="btn btn-outline-success" type="submit">Pesquisar</button>
+				  <input type="hidden" name="buscar" value="find"/>
+				</form>
+			  </div>
 			</div>
-		</nav>
+		  </nav>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
 		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

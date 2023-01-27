@@ -26,7 +26,7 @@
 	</head>
 	<body class="pdf">
 		<nav class = "barra"></nav>
-		<nav class="navbar navbar-expand-lg bg-dark">
+		<nav class="navbar navbar-expand-lg bg-dark" style="z-index: 2;">
 			<div class="container-fluid">
 			  <a id="rgb" href="index.php" style=color:orange>
 				<span style="color:red">R</span>
@@ -48,7 +48,7 @@
 				<?php
 					if ( (isset($_SESSION['nome'])) && ($_SESSION['nome'] != '') ) {
 						echo '<li class="nome-user">' . $_SESSION['nome'] . '</li>'; 
-						echo '<li> <a href="logout.php" style="padding: 10px 10px">Sair</a>';
+						echo '<li> <a href="logout.php" style="padding: 10px 10px; text-decoration: none; color:red;">Sair</a>';
 					} else { 
 						echo '
 						<li class="nav-item">
@@ -71,7 +71,7 @@
  
 		
 		  <div class="sidebar">	
-    <a href="index.php" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+    <a href="index.php" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom" style="margin-top: 65px;">
       <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-5 fw-semibold">Conteúdos</span>
     </a>

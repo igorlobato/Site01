@@ -84,9 +84,10 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 					}
 				?>
 				</ul>
-				<form class="d-flex" role="search">
-				  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-				  <button class="btn btn-outline-success" type="submit">Search</button>
+				<form action="pesquisa.php" method="POST" enctype="multipart/form-data" class="d-flex" role="search">
+				  <input name="busca" class="form-control me-2" type="text" placeholder="Digite algo..." aria-label="Search">
+				  <button value="Buscar" class="btn btn-outline-success" type="submit">Pesquisar</button>
+				  <input type="hidden" name="buscar" value="find"/>
 				</form>
 			  </div>
 			</div>
