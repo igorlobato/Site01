@@ -26,7 +26,7 @@ if(!isset($_SESSION)){
 				<span style="color:green">G</span>
 				<span style="color:blue">B</span>				
 			</a>	
-				<a style="padding: 0px 50px">Texto</a>
+				<a style="padding: 0px 20px">Postar</a>
 			</a>
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
 			  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
@@ -38,11 +38,11 @@ if(!isset($_SESSION)){
 				  <li class="nav-item">
 				
 				  </li>
-				  <a href="index.php" href="index.php" style="padding: 10px 10px; margin-left: 90px;">Voltar</a>
+				  <a href="index.php" href="index.php" style="padding: 10px 10px; margin-left: 20px; text-decoration: none;">Voltar</a>
 				</ul>
 				<form class="d-flex" role="search">
 				  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-				  <button class="btn btn-outline-success" type="submit">Search</button>
+				  <button class="btn btn-outline-success" type="submit">Pesquisar</button>
 				</form>
 			  </div>
 			</div>
@@ -51,30 +51,16 @@ if(!isset($_SESSION)){
           
 			<hr style="margin: 0px 0px;">
 
-    
-      
-
-	 
-			
-			 
-			
-      
-
-	  
-			 
-			  
-			
-		  
-          
+        
 		
 	
-			<form action="novopost.php" method="POST" enctype="multipart/form-data">
+<form action="novopost.php" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="topic" id="topic">
-  <ul class="navbar-nav">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin:3% 7%">
-        Selecione um tópico
-      </a>
+ 	 <ul class="navbar-nav">
+    	<li class="nav-item dropdown">
+      	<a id="topic-link" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin:3% 7%">
+        	Selecione um tópico
+      	</a>
       <ul class="dropdown-menu dropdown-menu-white">
         <li><a class="dropdown-item" href="#" value="Intel">Intel</a></li>
         <li><a class="dropdown-item" href="#" value="Amd">Amd</a></li>
@@ -87,26 +73,42 @@ if(!isset($_SESSION)){
 	  </ul>
     </li>
   </ul>
+
   
   
-  <input type="text"  name="titulo" placeholder="Adicione um título interessante" style="width: 100%;">
+  <input type="text"  name="titulo" placeholder="                        Adicione um título interessante" style="width: 100%;">
   
-  <textarea type="text" name="descricao" placeholder="Adicione o seu texto..." style="width: 100%; padding: 30px;"></textarea>
+  <textarea type="text" id="descricao" name="descricao" placeholder="Adicione o seu texto..." style="width: 100%; padding: 30px; overflow-y: hidden;"></textarea>
   <p>
-  <input name ="imagem" type="file">
+  <input name ="imagem" type="file" style="margin-left: 110px;">
   <center>
-    <button type="submit" class="postar" style="background-color: rgb(1, 147, 245); color: white; width: 20%; border-radius: 5px; min-width: 120px;">Postar</button>
+    <button type="submit" class="postar" style="background-color: rgb(1, 147, 245); color: white; width: 20%; border-radius: 5px; min-width: 120px; margin-bottom: 140px;">Postar</button>
   </center>
 </form>
 
 <script>
-  var options = document.querySelectorAll(".dropdown-item");
-  options.forEach(function(option) {
-    option.addEventListener("click", function() {
-      document.querySelector("#topic").value = this.getAttribute("value");
-    });
+	const dropdown = document.querySelector('.dropdown-menu');
+	const topicLink = document.getElementById('topic-link');
+	const topicInput = document.getElementById('topic');
+
+	dropdown.addEventListener('click', (event) => {
+		if (event.target.getAttribute('value')) {
+		const selectedTopic = event.target.getAttribute('value');
+		topicInput.value = selectedTopic;
+		topicLink.textContent = selectedTopic;
+		}
+	});
+</script>
+
+<script>
+  const textarea = document.getElementById('descricao');
+
+  textarea.addEventListener('input', () => {
+    textarea.style.height = 'auto'; 
+    textarea.style.height = textarea.scrollHeight + 'px'; 
   });
 </script>
+
 
     	
 </body>
@@ -121,4 +123,5 @@ if(!isset($_SESSION)){
       <script src="sidebars.js"></script>
 
 	
+
 </html>
