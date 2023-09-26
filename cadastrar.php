@@ -11,21 +11,21 @@ $result = mysqli_query($mysqli, $sql);
 $row = mysqli_fetch_assoc($result);
 
 if($row['total'] == 1){
-    $_SESSION['Esse E-mail já está cadastrado'] = true;
+    $_SESSION['mensagem'] = "Esse E-mail já está cadastrado";
     header('Location: paglogin.php');
     exit;
 }
 
 $sql = "INSERT INTO usuarios (email, nome, senha) VALUES ('$email', '$nome', '$senha')";
 
-
 if($mysqli->query($sql) === TRUE) {
-    $_SESSION['postagem'] = true;
+    $_SESSION['mensagem'] = "Usuário cadastrado com sucesso";
+} else {
+    $_SESSION['mensagem'] = "Falha ao cadastrar usuário";
 }
 
 $mysqli->close();
 
 header('Location: paglogin.php');
 exit;
-
 ?>

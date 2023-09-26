@@ -39,6 +39,14 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 
 ?>
 
+<?php
+session_start();
+if(isset($_SESSION['mensagem'])) {
+    echo '<p class="mensagem">' . $_SESSION['mensagem'] . '</p>';
+    unset($_SESSION['mensagem']);
+}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>

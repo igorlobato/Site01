@@ -195,6 +195,19 @@ main {
   border-radius: 5px;
 }
 
+.btn-perfil {
+  background-color: rgb(255, 0, 0);
+  color: rgb(0, 0, 0);
+  padding: 5px;
+  width: 25%;
+  min-width: 0px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-left: 210px;
+  margin-right: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
 .post {
   width: 40px;
 }
@@ -335,12 +348,13 @@ main {
   height: 40px;
 
   }
-.perfil{
-  background-color: white;
-  margin-top: 5px;
-}
-.formulario{
-  width: 50%;
-  margin-left: 400px;
-}
+  .perfil{
+    background-color: white;
+    margin-top: 0,1px;
+
+  }
+  .formulario{
+    width: 50%;
+    margin-left: 25%;
+  }
 }

@@ -1,4 +1,3 @@
-<!--  Cada post virar uma "página" -->
 <div class="well well-sm">
     
 <?php

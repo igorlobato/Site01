@@ -1,6 +1,6 @@
 <div class="well well-sm">
 <div class="banner barra-topo">
-			  <h1 style="margin: 0% 5%; margin-down: 5%;"><br>Geral</h1>
+			  <h1 style="margin-left: 5%; margin-bottom: 0%;"><br>Geral</h1>
 		  </div>
     <?php
         include_once 'conexao.php';

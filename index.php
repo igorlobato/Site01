@@ -60,8 +60,8 @@
 				?>
 					
 				</ul>
-				<form action="pesquisa.php" method="POST" enctype="multipart/form-data" class="d-flex" role="search">
-				  <input name="busca" class="form-control me-2" type="text" placeholder="Digite algo..." aria-label="Search">
+				<form action="?pagina=pesquisa" method="POST" enctype="multipart/form-data" class="d-flex" role="search">
+				  <input id="searchInput" name="busca" class="form-control me-2" type="text" placeholder="Digite algo..." aria-label="Search">
 				  <button value="Buscar" class="btn btn-outline-success" type="submit">Pesquisar</button>
 				  <input type="hidden" name="buscar" value="find"/>
 				</form>
@@ -77,14 +77,14 @@
     </a>
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
           Processadores
         </button>
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Intel</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Amd</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Outros</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded topic">Intel</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded topic">Amd</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded topic">Outros</a></li>
           </ul>
         </div>
       </li>
@@ -94,9 +94,9 @@
         </button>
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Geforce</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Radeon</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Outros</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded topic">Geforce</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded topic">Radeon</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded topic">Outros</a></li>
             
           </ul>
         </div>
@@ -107,8 +107,8 @@
         </button>
         <div class="collapse" id="orders-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Hardware</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Software</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded topic">Hardware</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded topic">Software</a></li>
           </ul>
         </div>
       </li>
@@ -134,7 +134,16 @@
 </div>
 </div>
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('.topic').click(function () {
+        var selectedTopic = $(this).text(); 
+        $('#searchInput').val(selectedTopic);
+        $('form').submit();
+    });
+});
+</script>
 		  
 			
 
