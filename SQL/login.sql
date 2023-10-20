@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Jan-2023 às 17:12
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 20/10/2023 às 23:32
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `comentarios`
+-- Estrutura para tabela `comentarios`
 --
 
 CREATE TABLE `comentarios` (
@@ -34,10 +34,10 @@ CREATE TABLE `comentarios` (
   `comentario` varchar(500) NOT NULL,
   `data` varchar(200) NOT NULL,
   `hora` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `comentarios`
+-- Despejando dados para a tabela `comentarios`
 --
 
 INSERT INTO `comentarios` (`id`, `id_post`, `nome`, `comentario`, `data`, `hora`) VALUES
@@ -54,21 +54,25 @@ INSERT INTO `comentarios` (`id`, `id_post`, `nome`, `comentario`, `data`, `hora`
 (11, 42, 'Usuario de Teste2', '        Não faço ideia meu nobre.', '27/01/2023', '13:01:30'),
 (12, 44, 'oi', '        Agora é comprar uma casa nova.', '27/01/2023', '13:10:13'),
 (13, 44, 'oi', '        Agora é comprar uma casa nova.', '27/01/2023', '13:10:21'),
-(14, 43, 'oi', '        Vende no mercado livre.', '27/01/2023', '13:10:51');
+(14, 43, 'oi', '        Vende no mercado livre.', '27/01/2023', '13:10:51'),
+(15, 42, 'eu', '        Testando', '20/09/2023', '15:47:19'),
+(16, 48, 'eu', '        kkkkkkkkkk', '26/09/2023', '12:49:59'),
+(17, 44, 'eu', '        duplica?', '26/09/2023', '14:00:19'),
+(18, 42, 'eu', 'eita\r\nk\r\n', '18/10/2023', '17:09:21');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `curtidas`
+-- Estrutura para tabela `curtidas`
 --
 
 CREATE TABLE `curtidas` (
   `id` int(20) NOT NULL,
   `id_post` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `curtidas`
+-- Despejando dados para a tabela `curtidas`
 --
 
 INSERT INTO `curtidas` (`id`, `id_post`) VALUES
@@ -90,12 +94,19 @@ INSERT INTO `curtidas` (`id`, `id_post`) VALUES
 (16, 36),
 (17, 42),
 (18, 44),
-(19, 43);
+(19, 43),
+(20, 42),
+(21, 44),
+(22, 44),
+(23, 44),
+(24, 48),
+(25, 43),
+(26, 49);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `posts`
+-- Estrutura para tabela `posts`
 --
 
 CREATE TABLE `posts` (
@@ -107,94 +118,103 @@ CREATE TABLE `posts` (
   `hora` varchar(200) DEFAULT NULL,
   `postador` varchar(200) DEFAULT NULL,
   `topico` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `posts`
+-- Despejando dados para a tabela `posts`
 --
 
 INSERT INTO `posts` (`id`, `titulo`, `descricao`, `imagem`, `data`, `hora`, `postador`, `topico`) VALUES
 (1, 'Primeira postagem', 'Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa Qualquer coisa ', '', '04/12/2022', '18:11', 'oi', NULL),
 (42, 'Como colocar mais ram no pc?', 'Titulo auto-explicativo', 'imagens/uploads/2016-07-19-memoria-ram-1.webp', '27/01/2023', '13:01:14', 'Usuario de Teste2', 'Hardware'),
 (43, 'Comprei o processador pra placa mãe errada e agora?', 'Esqueci de ver na hora.', 'imagens/uploads/download.jfif', '27/01/2023', '13:08:15', 'Usuario de Teste2', 'Intel'),
-(44, 'Eu já sabia que Amd esquentava, mas isso é passar dos limites', 'Tocou fogo na casa.', 'imagens/uploads/vga-esquentando.jpg', '27/01/2023', '13:09:32', 'Usuario de Teste2', 'Radeon');
+(44, 'Eu já sabia que Amd esquentava, mas isso é passar dos limites', 'Tocou fogo na casa.', 'imagens/uploads/vga-esquentando.jpg', '27/01/2023', '13:09:32', 'Usuario de Teste2', 'Radeon'),
+(46, 'gt 710', 'top demais kkkk', 'imagens/uploads/', '26/09/2023', '12:22:12', 'eu', 'Geforce'),
+(48, 'teste', 'foto menor', 'imagens/uploads/592538.jpg', '26/09/2023', '12:49:42', 'eu', 'Intel'),
+(49, 'teste sem foto', 'uiui', 'imagens/uploads/', '26/09/2023', '14:06:14', 'eu', 'Software');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nome` varchar(140) DEFAULT NULL,
   `email` varchar(140) NOT NULL,
-  `senha` varchar(16) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `senha` varchar(16) NOT NULL,
+  `adm` tinyint(1) NOT NULL,
+  `foto` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
-(1, 'Usuario de Teste2', 'teste@teste.com', 'teste'),
-(15, 'oi', 'oi@oi.com', 'oi');
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `adm`, `foto`) VALUES
+(1, 'eu', 'eu@eu.com', 'eu', 1, 'imagens/fotosdeperfil/eu.jpg'),
+(20, '', 'oi', '', 0, ''),
+(22, 'bam', 'bambam@bam.com', 'bam', 0, 'imagens/fotosdeperfil/bam.jpg'),
+(23, 'igor', 'igor_stm@yahoo.com.br', 'igor', 0, ''),
+(24, '', '', '', 0, ''),
+(25, 'oi', 'oi@oi.com', 'oi', 0, 'imagens/fotosdeperfil/oi.jpg');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `comentarios`
+-- Índices de tabela `comentarios`
 --
 ALTER TABLE `comentarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `curtidas`
+-- Índices de tabela `curtidas`
 --
 ALTER TABLE `curtidas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `posts`
+-- Índices de tabela `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `curtidas`
 --
 ALTER TABLE `curtidas`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

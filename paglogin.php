@@ -24,6 +24,9 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 			}
 			$_SESSION['id'] = $usuario['id'];
 			$_SESSION['nome'] = $usuario['nome'];
+			$_SESSION['email'] = $usuario['email'];
+			$_SESSION['adm'] = $usuario['adm'];
+			$_SESSION['foto'] = $usuario['foto'];
 			
 			header("Location: index.php");
 		} 
@@ -92,8 +95,8 @@ if(isset($_SESSION['mensagem'])) {
 					}
 				?>
 				</ul>
-				<form action="pesquisa.php" method="POST" enctype="multipart/form-data" class="d-flex" role="search">
-				  <input name="busca" class="form-control me-2" type="text" placeholder="Digite algo..." aria-label="Search">
+				<form action="index.php?pagina=pesquisa" method="POST" enctype="multipart/form-data" class="d-flex" role="search">
+				  <input id="searchInput" name="busca" class="form-control me-2" type="text" placeholder="Digite algo..." aria-label="Search">
 				  <button value="Buscar" class="btn btn-outline-success" type="submit">Pesquisar</button>
 				  <input type="hidden" name="buscar" value="find"/>
 				</form>
@@ -136,6 +139,18 @@ if(isset($_SESSION['mensagem'])) {
 			</center>
 			</p>
 		</form>
+
+		<?php if (isset($mensagem)) : ?>
+        <div class="alert">
+            <p><?php echo $mensagem; ?></p>
+            <button onclick="fecharMensagem()">Fechar</button>
+        </div>
+		<?php endif; ?>
+		<script>
+			function fecharMensagem() {
+				document.querySelector('.alert').style.display = 'none';
+			}
+		</script>
 
 		
 		<h1 style="padding: 10px 30px">Entrar</h1>

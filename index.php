@@ -47,7 +47,29 @@
 
 				<?php
 					if ( (isset($_SESSION['nome'])) && ($_SESSION['nome'] != '') ) {
-						echo '<li class="nome-user">' . $_SESSION['nome'] . '</li>'; 
+						if (isset($_SESSION['id'])) {
+							// Recupere a URL da foto de perfil do usuário do banco de dados
+							$idUser = $_SESSION['id'];
+							$seleciona = mysqli_query($mysqli, "SELECT foto FROM usuarios WHERE id = '$idUser'");
+							$linha = mysqli_fetch_assoc($seleciona);
+					
+							// Verifique se a foto de perfil existe
+							$fotoPerfil = $linha['foto'];
+					
+							if (is_null($fotoPerfil)) {
+								$fotoPerfil = 'imagens/fotosdeperfil/foto_perfil0.jpg'; // Use a imagem padrão
+							}
+					
+							// Exiba a foto de perfil em uma tag <img> e defina um tamanho adequado
+							echo '<a href="?pagina=editarperfil"><img src="' . $fotoPerfil . '" alt="Foto de Perfil" style="width: 25px; height: 25px; border-radius: 50%; margin-right: 10px;"></a>';
+						}
+
+
+						echo '<li class="nome-user">' . $_SESSION['nome'];
+						if (isset($_SESSION['adm']) && $_SESSION['adm'] != 0) {
+						echo ' <span style="color: #ADFF2F">adm</span>';
+					}
+						echo '</li>';
 						echo '<li> <a href="logout.php" style="padding: 10px 10px; text-decoration: none; color:red;">Sair</a>';
 					} else { 
 						echo '

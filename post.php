@@ -24,7 +24,8 @@ if(!isset($_SESSION)){
 			<a id="rgb" href="index.php" style=color:orange>
 				<span style="color:red">R</span>
 				<span style="color:green">G</span>
-				<span style="color:blue">B</span>				
+				<span style="color:blue">B</span>	
+				
 			</a>	
 				<a style="padding: 0px 20px">Postar</a>
 			</a>
